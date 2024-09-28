@@ -37,12 +37,12 @@
 
 後來直接用helm 來裝 再配置IPAddressPool & L2Advertisement , 這邊還有重點需要先
 
-    ```shell
+   ```shell
         docker network inspect -f '{{.IPAM.Config}}' kind
-    ```
+   ```
 看一下docker kind 網段 , IPAddressPool range 需在這段裡面
 
-    ```yaml
+```yaml
         apiVersion: metallb.io/v1beta1
         kind: IPAddressPool
         metadata:
@@ -51,7 +51,7 @@
         spec:
           addresses:
           - 172.18.0.240-172.18.0.250
-    ```
+```
 發現改speak daemonset nodeSelectors 到 infra node .
 這邊為了讓本機連上踩了一堆坑因Mac & Windows container network 不會expose 給 host , 所以需要加虛擬網卡&tunnel 讓 host 和 docker brige 連通.
 
