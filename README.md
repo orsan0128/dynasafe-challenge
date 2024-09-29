@@ -1,7 +1,7 @@
 ## 架構圖
 
 架構圖待補
-![架構圖](architecture-diagram.pn)
+![架構圖](simple_architecture.jpg)
 
 1. 請以kind (https://kind.sigs.k8s.io/) 架設一個3個control-plane 節點，以及4個worker 節點 。
    因docker in docker 且起 7 個 node , mac直接資源不夠 找了平常不做工作用的電腦來做此次kind部署
