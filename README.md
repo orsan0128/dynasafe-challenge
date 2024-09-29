@@ -4,6 +4,7 @@
 ![架構圖](simple_architecture.jpg)
 
 1. 請以kind (https://kind.sigs.k8s.io/) 架設一個3個control-plane 節點，以及4個worker 節點 。
+
    因docker in docker 且起 7 個 node , mac直接資源不夠 找了平常不做工作用的電腦來做此次kind部署
    
 3. 節點分為2群角色或功能:Infra node: 4個worker中的2個節點 作為infra node。 Application node: 4 個worker 中的2 個節點 作為 application node。
